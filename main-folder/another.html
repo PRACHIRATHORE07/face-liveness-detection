@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Authentication Modal</title>
+    <style>
+        /* Style for the button */
+        .start-button {
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            text-align: center;
+            display: inline-block;
+        }
+
+        /* Modal container */
+        .modal {
+            display: none; /* Initially hidden */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* Transparent black background */
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Modal content */
+        .modal-content {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Buttons in the modal */
+        .modal-buttons button {
+            padding: 10px 15px;
+            margin: 5px;
+            border: none;
+            border-radius: 5px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        .ok-button {
+            background-color: #28a745;
+            color: white;
+        }
+
+        .cancel-button {
+            background-color: #dc3545;
+            color: white;
+        }
+
+        /* Button hover effects */
+        .start-button:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <div class="button-container">
+        <!-- Updated button with onclick -->
+        <div class="start-button" onclick="showModal()">Start</div>
+    </div>
+
+    <!-- Modal -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <h2>Instructions</h2>
+            <p>1. Ensure your face is well-lit and visible to the camera.</p>
+            <p>2. Maintain a neutral expression during the process.</p>
+            <p>3. Click "OK" to begin or "Cancel" to exit.</p>
+            <div class="modal-buttons">
+                <button class="ok-button" onclick="goToPage()">OK</button>
+                <button class="cancel-button" onclick="hideModal()">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Show the modal
+        function showModal() {
+            document.getElementById('modal').style.display = 'flex';
+        }
+
+        // Hide the modal
+        function hideModal() {
+            document.getElementById('modal').style.display = 'none';
+        }
+
+        // Redirect to another HTML page
+        function goToPage() {
+            window.location.href = 'index.html'; // Replace with your target page
+        }
+    </script>
+</body>
+</html>
